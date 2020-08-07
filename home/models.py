@@ -5,7 +5,7 @@ from django.db import models
 class SiteContent(models.Model):
    title_text = models.CharField(blank=True, max_length=100)
    main_text = models.CharField(blank=True, max_length=1000)
-   image_loc = models.ImageField(null=True)
+   image_loc = models.ImageField(blank=True, null=True)
    content_loc = models.CharField(max_length=100)
    
    def __str__(self):
