@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static '/contact/styles.css' %}">
+
+<div class="contactForm">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Contact Us</h1>
+  </div>
+  <div>
+    <p class="contactText">Contact us via email at email@ausimin.com.au or fill in the form below and we'll get back to you promptly</p>
+    </p>
+  </div>
+  <form class="form-contact">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="honorific">Title</label>
+          <select class="form-control" id="honorific">
+            <option>Dr.</option>
+            <option>Miss</option>
+            <option>Mr.</option>
+            <option>Mrs.</option>
+            <option>Ms.</option>
+            <option selected="selected">Mx.</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="col">
+        <label for="fName">First Name</label>
+        <input type="text" class="form-control" id="fName" placeholder="First name">
+      </div>
+  
+      <div class="col">
+        <label for="lName">Last Name</label>
+        <input type="text" class="form-control" id="lName" placeholder="Last name">
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input type="text" class="form-control" id="company" placeholder="Organisation">
+    </div>
+
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" placeholder="Country">
+    </div>
+
+    <div class="form-group">
+      <label for="emailAddress">Email address</label>
+      <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+    </div>
+  
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="text" class="form-control" id="phone" placeholder="(+61)123456789">
+    </div>
+  
+    <div class="form-group">
+      <label for="reason">Reason for Contact</label>
+      <select class="form-control" id="reason">
+        <option>Existing Distributor</option>
+        <option>Media</option>
+        <option>New Distributor</option>
+        <option>Quote Request</option>
+        <option selected="selected">Other</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea class="form-control" id="message" rows="3"></textarea>
+    </div>
+  </form>
+</div>
+<!-- insert content here-->
+{% endblock %}

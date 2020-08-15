@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/home/styles.css' %}">
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -12,9 +15,11 @@
       <img class="first-slide" src="{% static 'home/images/ship.jpg'%}" alt="First slide">
       <div class="container">
         <div class="carousel-caption text-left">
+<!--          <div class="transbox"> -->
           <h1>{{car_cont.0.title_text}}</h1>
           <p>{{car_cont.0.main_text}}</p>
-          <p><a class="btn btn-lg btn-primary" href="/about_us" role="button">About Us</a></p>
+<!--           </div> -->
+          <p><a class="btn btn-lg btn-primary" href="/about" role="button">About Us</a></p>
         </div>
       </div>
     </div>
@@ -62,19 +67,19 @@
       <img class="rounded-circle" src="{% static 'home/images/red.jpg'%}" alt="Generic placeholder image" width="140" height="140">
       <h2>{{mark_cont.0.title_text}}</h2>
       <p>{{mark_cont.0.main_text}}</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="/products#Prod1" role="button">View details &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <img class="rounded-circle" src="{% static 'home/images/blue.jpg'%}" alt="Generic placeholder image" width="140" height="140">
       <h2>{{mark_cont.1.title_text}}</h2>
       <p>{{mark_cont.1.main_text}}</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="/products#Prod2" role="button">View details &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <img class="rounded-circle" src="{% static 'home/images/green.jpg'%}" alt="Generic placeholder image" width="140" height="140">
       <h2>{{mark_cont.2.title_text}}</h2>
       <p>{{mark_cont.2.main_text}}</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="/products#Prod3" role="button">View details &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
 </div><!-- /.container -->

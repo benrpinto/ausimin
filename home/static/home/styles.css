@@ -20,7 +20,14 @@ body {
 .carousel-caption {
   bottom: 3rem;
   z-index: 10;
+/*  color: #000000 */
 }
+
+/* .transbox { 
+  background-color: #000;
+  border: 1px #000000;
+  opacity: 0.6
+} */
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
@@ -53,21 +60,6 @@ body {
 }
 
 
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
-}
-
-
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
@@ -79,13 +71,4 @@ body {
     line-height: 1.4;
   }
 
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
 }
