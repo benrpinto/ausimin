@@ -13,7 +13,8 @@
     <p class="contactText">Contact us via email at email@ausimin.com.au or fill in the form below and we'll get back to you promptly</p>
     </p>
   </div>
-  <form class="form-contact">
+  <form class="form-contact" action="{% url 'contact:mail' %}" method="post">
+   {% csrf_token %}
     <div class="row">
       <div class="col">
         <div class="form-group">
