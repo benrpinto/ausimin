@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import SiteContent
+from .models import PageContent
+from .models import CarouselContent
 # Register your models here.
-admin.site.register(SiteContent)
+admin.site.register(CarouselContent)
+admin.site.register(PageContent)

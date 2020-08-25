@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import FeatureContent
+from .models import PageContent
 # Register your models here.
-admin.site.register(FeatureContent)
+admin.site.register(PageContent)

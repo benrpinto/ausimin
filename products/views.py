@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import FeatureContent
+from .models import PageContent
 
 def products(request):
-   productContent = FeatureContent.objects.filter(content_loc='ProductContent')
+   productContent = PageContent.objects.filter(content_loc='ProductContent')
    context = {
               'prod_cont':productContent,
               'app_text':"Products",
