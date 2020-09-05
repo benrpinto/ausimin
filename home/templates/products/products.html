@@ -40,10 +40,28 @@
       <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/green.jpg'%}" alt="Generic placeholder image">
     </div>
   </div>
-
   <hr class="featurette-divider">
-
   <!-- /END THE FEATURETTES -->
 
+  <!-- Certifications -->
 </div><!-- /.container -->
+<!-- Certifications -->
+<div class="container marketing">
+  <div class="row-md-7 text-center">
+    <h2 class="featurette-heading">{{cert_cont.0.title_text}}</h2>
+    <p class="lead">{{cert_cont.0.main_text}}</p>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 text-center">
+      <img class="cert-image" src="{% static 'home/images/KosherAus.png'%}" alt="Generic placeholder image" width="140" height="140">
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4 text-center">
+      <img class="cert-image" src="{% static 'home/images/Halal.jpg'%}" alt="Generic placeholder image" width="217" height="140">
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4 text-center">
+      <img class="cert-image" src="{% static 'home/images/GMP.gif'%}" alt="Generic placeholder image" width="140" height="140">
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
 {% endblock %}

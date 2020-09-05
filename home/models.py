@@ -8,6 +8,7 @@ class SiteContent(models.Model):
       ('HomeCarousel', 'Carousel'),
       ('HomeMarketing', 'Marketing'),
       ('ProductContent', 'Products'),
+      ('CertContent', 'Certification'),
    )
    title_text = models.CharField(blank=True, max_length=100)
    main_text = models.CharField(blank=True, max_length=2000)
