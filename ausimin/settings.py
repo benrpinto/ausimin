@@ -104,10 +104,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+#EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'mail.ausimin.com.au'
 #allow access for less secure apps in gmail, and set up app passwords
-EMAIL_PORT = 587
+#EMAIL_PORT = 587
+EMAIL_PORT = 465
 #Add EMAIL_HOST_USER and EMAIL_HOST_PASSWORD in your secrets.py file
 
 # Internationalization
