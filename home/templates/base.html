@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Benjamin Pinto">
    
     <link rel="icon" href="{% static 'home/images/logo.png' %}">
 
@@ -32,21 +32,45 @@
   background-image: url("{% static 'home/images/fullbanner.png'%}");
   background-repeat: repeat-x;
   }
+  @media (min-width:41em){
+    .small-only{
+      display:none;
+    }
+  }
+
+  @media (max-width:40em){
+    .navbar-logo {
+      width:5rem;
+      height:5rem;
+    }
+    .small-hidden{
+      display:none;
+    }
+
+    .header-col{
+      width:30px
+    }
+    .header-text{
+      font-size: 0.9rem
+    }
+  }
   </style>
 
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <img class="navbar-logo" src="{% static 'home/images/logo.png'%}" alt="Ausimin Logo" width="140" height="140">
+        <img class="navbar-logo small-hidden" src="{% static 'home/images/logo.png'%}" alt="Ausimin Logo" width=140 height=140>
         <div class="col">
-        <!-- Warning, this isn't responsive design --!>
-          <div class="row" style="height:80px;">
-	  <p>
-	    <b>AUSIMIN PTY. LTD.</b>
-            <br>
-	    Gypsum Products and Solutions
-	  </p>
-          </div>  
+          <div class="row" style="height:6rem;">
+              <img class="navbar-logo small-only" src="{% static 'home/images/logo.png'%}" alt="Ausimin Logo">
+            <div class="col" width=auto>
+              <p class="header-text">
+      	       <b>AUSIMIN PTY. LTD.</b>
+                <br>
+      	       Gypsum Products and Solutions
+      	     </p>
+            </div>
+          </div>
         <!-- Warning, this isn't responsive design --!>
           <div class="row">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,7 +109,7 @@
       <!-- FOOTER -->
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p class="float-left">&copy; 2020 Ausimin Pty Ltd &middot; ABN: 48 146 942 529</p>
+        <p class="float-left">&copy; 2021 Ausimin Pty Ltd &middot; ABN: 48 146 942 529</p>
       </footer>
     </main>
 
