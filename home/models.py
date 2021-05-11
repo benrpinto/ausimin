@@ -9,6 +9,7 @@ class SiteContent(models.Model):
       ('HomeMarketing', 'Marketing'),
       ('ProductContent', 'Products'),
       ('CertContent', 'Certification'),
+      ('ApplContent', 'Applications'),
    )
    title_text = models.CharField(blank=True, max_length=100)
    main_text = models.CharField(blank=True, max_length=2000)

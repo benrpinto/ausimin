@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/applications/styles.css' %}">
+<div class="container marketing">
+  <!-- START THE FEATURETTES -->
+  <hr class="featurette-divider" id="Appl1">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">{{appl_cont.0.title_text}}<br><span class="text-muted">{{appl_cont.0.subtitle_text}}</span></h2>
+      <p class="lead">{{appl_cont.0.main_text}}</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/gypsum2.jpg'%}" alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider" id="Appl2">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading">{{appl_cont.1.title_text}}<br><span class="text-muted">{{appl_cont.1.subtitle_text}}</span></h2>
+      <p class="lead">{{appl_cont.1.main_text}}</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/field.jpg'%}" alt="Generic placeholder image">
+    </div>
+  </div>
+  
+  <hr class="featurette-divider">
+  <!-- /END THE FEATURETTES -->
+</div>
+{% endblock %}
