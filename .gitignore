@@ -16,5 +16,6 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
+home/static/home/pdfs/
 secrets.py
 db.sqlite3
