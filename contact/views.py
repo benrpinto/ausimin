@@ -10,15 +10,12 @@ def contact(request):
 def mail(request):
    if (request.method == "POST"):
       print("form received")
-      subject = "Message from "\
-      + request.POST['honorific'] +" "\
-      + request.POST['fName'] + " "\
-      + request.POST['lName']
+      subject = "Message from " + request.POST['fName']
       message_body = "Company: " + request.POST['company']\
       + "\n" + "Country: " + request.POST['country']\
       + "\n" + "Email: "   + request.POST['emailAddress']\
       + "\n" + "Phone: "   + request.POST['phone']\
-      + "\n" + "Reason: "  + request.POST['reason']\
+      + "\n" + "Contact via: "  + request.POST['reason']\
       + "\n" + "Message: " + request.POST['message']
       send_mail(
          subject,

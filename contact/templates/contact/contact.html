@@ -15,61 +15,36 @@
   </div>
   <form class="form-contact" action="{% url 'contact:mail' %}" method="post">
    {% csrf_token %}
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="honorific">Title</label>
-          <select class="form-control" name="honorific" id="honorific">
-            <option>Dr.</option>
-            <option>Miss</option>
-            <option>Mr.</option>
-            <option>Mrs.</option>
-            <option>Ms.</option>
-            <option selected="selected">Mx.</option>
-          </select>
-        </div>
-      </div>
-  
-      <div class="col">
-        <label for="fName">First Name</label>
-        <input type="text" class="form-control" name="fName" id="fName" placeholder="First name">
-      </div>
-  
-      <div class="col">
-        <label for="lName">Last Name</label>
-        <input type="text" class="form-control" name="lName" id="lName" placeholder="Last name">
-      </div>
+    <div class="row form-group">
+    <div class="col">
+      <label for="fName">Name</label>
+      <input type="text" class="form-control" name="fName" required="true" id="fName" placeholder="Name">
     </div>
   
-    <div class="form-group">
+    <div class="col">
       <label for="company">Company</label>
       <input type="text" class="form-control" name= "company" id="company" placeholder="Organisation">
     </div>
-
-
-    <div class="form-group">
+    <div class="col">
       <label for="country">Country</label>
       <input type="text" class="form-control" name="country" id="country" placeholder="Country">
     </div>
-
+    </div>
     <div class="form-group">
       <label for="emailAddress">Email address</label>
-      <input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="name@example.com">
+      <input type="email" class="form-control" name="emailAddress" required="true" id="emailAddress" placeholder="name@example.com">
     </div>
   
     <div class="form-group">
       <label for="phone">Phone Number</label>
-      <input type="text" class="form-control" name="phone" id="phone" placeholder="(+61)123456789">
+      <input type="text" class="form-control" name="phone" id="phone" required="true" placeholder="(+61)123456789">
     </div>
   
     <div class="form-group">
-      <label for="reason">Reason for Contact</label>
+      <label for="reason">Preferred Contact Method</label>
       <select class="form-control" name="reason" id="reason">
-        <option>Existing Distributor</option>
-        <option>Media</option>
-        <option>New Distributor</option>
-        <option>Quote Request</option>
-        <option selected="selected">Other</option>
+        <option selected="selected">Phone Call</option>
+        <option>Email</option>
       </select>
     </div>
   
