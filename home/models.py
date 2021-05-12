@@ -5,6 +5,7 @@ from django.db import models
 class SiteContent(models.Model):
    title_text = models.CharField(blank=True, max_length=100)
    main_text = models.CharField(blank=True, max_length=2000)
+   image = models.ImageField(blank=True, null=True)
    class Meta:
       abstract = True
 
@@ -17,7 +18,9 @@ class FeatureContent(SiteContent):
       abstract = True
 
 class CarouselContent(SiteContent):
-   pass
+   button_text = models.CharField(default="Click Here", max_length=50)
+   link = models.CharField(default="/", max_length=50)
 
 class HomeContent(FeatureContent):
-   pass
+   button_text = models.CharField(default="Click Here", max_length=50)
+   link = models.CharField(default="/", max_length=50)

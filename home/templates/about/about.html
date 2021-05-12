@@ -2,27 +2,32 @@
 {% load static %}
 {% block content %}
 
-
 <link rel="stylesheet" type="text/css" href="{% static '/about/styles.css' %}">
 
 <div class="container marketing">
   <!-- START THE FEATURETTES -->
+  {% for ab_i in ab_cont %}
+     <hr class="featurette-divider" id="about{{forloop.counter}}">
+     <div class="row featurette">
+       {% if forloop.counter0|divisibleby:2 %}
+          <div class="col-md-7">
+       {% else %}
+          <div class="col-md-7 order-md-2">
+       {%endif%}
+         <h2 class="featurette-heading">{{ab_i.title_text}}<br><span class="text-muted">{{ab_i.subtitle_text}}</span></h2>
+         <p class="lead">{{ab_i.main_text}}</p>
+       </div>
+       {% if forloop.counter0|divisibleby:2 %}
+          <div class="col-md-5">
+       {% else %}
+          <div class="col-md-5 order-md-1">
+       {%endif%}
+         <img class="featurette-image img-fluid mx-auto" src="{{ab_i.image.url}}" alt="Generic placeholder image">
+       </div>
+     </div>
+  {% endfor %}
+  
   <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">{{ab_cont.0.title_text}}<span class="text-muted">{{ab_cont.0.subtitle_text}}</span></h2>
-      <p class="lead">{{ab_cont.0.main_text}}</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/logo.png'%}" alt="Generic placeholder image">
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-
   <!-- /END THE FEATURETTES -->
-
 </div><!-- /.container -->
 {% endblock %}

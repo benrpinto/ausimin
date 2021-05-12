@@ -5,30 +5,29 @@
 <link rel="stylesheet" type="text/css" href="{% static '/applications/styles.css' %}">
 <div class="container marketing">
   <!-- START THE FEATURETTES -->
-  <hr class="featurette-divider" id="Appl1">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">{{appl_cont.0.title_text}}<br><span class="text-muted">{{appl_cont.0.subtitle_text}}</span></h2>
-      <p class="lead">{{appl_cont.0.main_text}}</p>
-          <p><a class="btn btn-lg btn-primary" href="{% static 'home/pdfs/1. Ausimin Terra Alba 1- Calcium Sulphate for the Baking industry.pdf'%}" download role="button">Technical Specs</a></p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/gypsum2.jpg'%}" alt="Generic placeholder image">
-    </div>
-  </div>
-
-  <hr class="featurette-divider" id="Appl2">
-
-  <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">{{appl_cont.1.title_text}}<br><span class="text-muted">{{appl_cont.1.subtitle_text}}</span></h2>
-      <p class="lead">{{appl_cont.1.main_text}}</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/field.jpg'%}" alt="Generic placeholder image">
-    </div>
-  </div>
+  {% for appl_i in appl_cont %}
+     <hr class="featurette-divider" id="Appl{{forloop.counter}}">
+     <div class="row featurette">
+       {% if forloop.counter0|divisibleby:2 %}
+          <div class="col-md-7">
+       {% else %}
+          <div class="col-md-7 order-md-2">
+       {%endif%}
+         <h2 class="featurette-heading">{{appl_i.title_text}}<br><span class="text-muted">{{appl_i.subtitle_text}}</span></h2>
+         <p class="lead">{{appl_i.main_text}}</p>
+           {%if appl_i.load_file %}
+             <p><a class="btn btn-lg btn-primary" href="{{appl_i.load_file.url}}" download role="button">{{appl_i.button_text}}</a></p>
+           {% endif %}
+       </div>
+       {% if forloop.counter0|divisibleby:2 %}
+          <div class="col-md-5">
+       {% else %}
+          <div class="col-md-5 order-md-1">
+       {%endif%}
+         <img class="featurette-image img-fluid mx-auto" src="{{appl_i.image.url}}" alt="Generic placeholder image">
+       </div>
+     </div>
+  {% endfor %}
   
   <hr class="featurette-divider">
   <!-- /END THE FEATURETTES -->

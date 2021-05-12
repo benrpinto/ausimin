@@ -22,6 +22,11 @@ class ProductContent(models.Model):
    def __str__(self):
       return self.title_text + '(' + str(self.id) +')'
 
+class ButtonContent(models.Model):
+   button_text = models.CharField(default="Click Me", max_length=50)
+   load_file = models.FileField()
+   related_product = models.ForeignKey(ProductContent,on_delete=models.CASCADE)
+
 class UsesContent(models.Model):
    readonly_fields = ('id',)
    use_text = models.CharField(blank=True, max_length=2000)
