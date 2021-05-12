@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import PageContent
+from .models import AboutContent
 
 def about(request):
-   aboutContent = PageContent.objects.filter(content_loc='AboutContent')
+   myAbout = AboutContent.objects.all
    context = {
-              'ab_cont':aboutContent,
+              'ab_cont':myAbout,
               'app_text':"About Us",
               'app_name':"About"
              }

@@ -1,4 +1,7 @@
 from django.contrib import admin
-from .models import PageContent
+from .models import AboutContent
 # Register your models here.
-admin.site.register(PageContent)
+class ContentAdmin(admin.ModelAdmin):
+   readonly_fields = ('id',)
+
+admin.site.register(AboutContent,ContentAdmin)

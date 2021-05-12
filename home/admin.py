@@ -1,6 +1,10 @@
 from django.contrib import admin
-from .models import PageContent
+from .models import HomeContent
 from .models import CarouselContent
 # Register your models here.
-admin.site.register(CarouselContent)
-admin.site.register(PageContent)
+
+class ContentAdmin(admin.ModelAdmin):
+   readonly_fields = ('id',)
+
+admin.site.register(CarouselContent,ContentAdmin)
+admin.site.register(HomeContent,ContentAdmin)

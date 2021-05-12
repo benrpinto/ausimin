@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from .models import PageContent
+from .models import ProductContent
+from .models import UsesContent
+from .models import CertContent
 
 def products(request):
-   productContent = PageContent.objects.filter(content_loc='ProductContent')
-   certContent    = PageContent.objects.filter(content_loc='CertContent')
+   #myProducts = ProductContent.objects
+   myCerts    = CertContent.objects.all
    context = {
-              'prod_cont':productContent,
-              'cert_cont':certContent,
+   #           'prod_cont':myProducts,
+              'cert_cont':myCerts,
               'app_text':"Products",
               'app_name':"Products"
              }

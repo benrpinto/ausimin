@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from .models import CarouselContent
-from .models import PageContent
+from .models import HomeContent
 
 def home(request):
-   carouselContent  = CarouselContent.objects.filter(content_loc='HomeCarousel')
-   marketingContent = PageContent.objects.filter(content_loc='HomeMarketing')
+   myCarousel  = CarouselContent.objects.all
+   myHome = HomeContent.objects.all
    context = {
-              'car_cont' :carouselContent,
-              'mark_cont':marketingContent,
+              'car_cont' :myCarousel,
+              'mark_cont':myHome,
               'app_text':"Home",
               'app_name':"Home"
              }
