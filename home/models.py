@@ -24,3 +24,9 @@ class CarouselContent(SiteContent):
 class HomeContent(FeatureContent):
    button_text = models.CharField(default="Click Here", max_length=50)
    link = models.CharField(default="/", max_length=50)
+
+class GeneralButton(models.Model):
+   button_text = models.CharField(default="Click Me", max_length=50)
+   load_file = models.FileField()
+   class Meta:
+      abstract = True

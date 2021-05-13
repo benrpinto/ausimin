@@ -40,6 +40,13 @@
             {% endif %}
          {% endfor %}
          </ul>
+         {% for butt_a in butt_cont %}
+            {% if forloop.counter == forloop.parentloop.counter %}
+               {% for butt_i in butt_a%}
+                 <a class="btn btn-lg btn-primary" href="{{butt_i.load_file.url}}" download role="button">{{butt_i.button_text}}</a>
+               {% endfor %}
+            {% endif %}
+         {% endfor %}
        </div>
        {% if forloop.counter0|divisibleby:2 %}
          <div class="col-md-5">
