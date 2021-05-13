@@ -7,6 +7,8 @@ class ProductContent(models.Model):
    readonly_fields = ('id',)
    #title
    title_text = models.CharField(blank=True, max_length=100)
+   #accompanying image
+   image = models.ImageField(blank=True,null=True)
    #other names
    aka_text = models.CharField(blank=True, max_length=2000)
    #purity

@@ -5,46 +5,46 @@
 <link rel="stylesheet" type="text/css" href="{% static '/products/styles.css' %}">
 <div class="container marketing">
   <!-- START THE FEATURETTES -->
-  <hr class="featurette-divider" id="Prod1">
+  {% for prod_i in prod_cont %}
+     <hr class="featurette-divider" id="Prod{{forloop.counter}}">
 
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">{{prod_cont.0.title_text}}<br><span class="text-muted">{{prod_cont.0.subtitle_text}}</span></h2>
-      <p class="lead">{{prod_cont.0.main_text}}</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/gypsum2.jpg'%}" alt="Generic placeholder image">
-    </div>
-  </div>
+     <div class="row featurette">
+       {% if forloop.counter0|divisibleby:2 %}
+         <div class="col-md-7">
+       {% else %}
+         <div class="col-md-7 order-md-2">
+       {% endif %}
+         <h2 class="featurette-heading">{{prod_i.title_text}}</h2>
+         {% if prod_i.aka_text %}
+         <p><b>Other Names: </b>{{prod_i.aka_text}}</p>
+         {% endif %}
+         {% if prod_i.purity_text %}
+         <p><b>Purity: </b>{{prod_i.purity_text}}</p>
+         {% endif %}
+         {% if prod_i.standards_text %}
+         <p><b>Standards: </b>{{prod_i.standards_text}}</p>
+         {% endif %}
+         {% if prod_i.sizes_text %}
+         <p><b>Pack Sizes: </b>{{prod_i.sizes_text}}</p>
+         {% endif %}
+         {% if prod_i.specs_text %}
+         <p><b>Product Specifications: </b>{{prod_i.specs_text}}</p>
+         {% endif %}
+       </div>
+       {% if forloop.counter0|divisibleby:2 %}
+         <div class="col-md-5">
+       {% else %}
+         <div class="col-md-5 order-md-1">
+       {% endif %}
+         <img class="featurette-image img-fluid mx-auto" src="{{prod_i.image.url}}" alt="Generic placeholder image">
+       </div>
+     </div>
+  {% endfor %}
 
-  <hr class="featurette-divider" id="Prod2">
-
-  <div class="row featurette">
-    <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">{{prod_cont.1.title_text}}<br><span class="text-muted">{{prod_cont.1.subtitle_text}}</span></h2>
-      <p class="lead">{{prod_cont.1.main_text}}</p>
-    </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/field.jpg'%}" alt="Generic placeholder image">
-    </div>
-  </div>
-
-  <hr class="featurette-divider" id="Prod3">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">{{prod_cont.2.title_text}}<br><span class="text-muted">{{prod_cont.2.subtitle_text}}</span></h2>
-      <p class="lead">{{prod_cont.2.main_text}}</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" src="{% static 'home/images/gypsum1.jpg'%}" alt="Generic placeholder image">
-    </div>
-  </div>
   <hr class="featurette-divider">
   <!-- /END THE FEATURETTES -->
+</div>
 
-  <!-- Certifications -->
-</div><!-- /.container -->
 <!-- Certifications -->
 <div class="container marketing">
   <div class="row-md-7 text-center">
