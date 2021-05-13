@@ -30,6 +30,16 @@
          {% if prod_i.specs_text %}
          <p><b>Product Specifications: </b>{{prod_i.specs_text}}</p>
          {% endif %}
+         <p><b>Uses: </b></p>
+         <ul>
+         {% for use_a in use_cont %}
+            {% if forloop.counter == forloop.parentloop.counter %}
+               {% for use_i in use_a%}
+                  <li>{{use_i.use_text}}</li>
+               {% endfor %}
+            {% endif %}
+         {% endfor %}
+         </ul>
        </div>
        {% if forloop.counter0|divisibleby:2 %}
          <div class="col-md-5">
