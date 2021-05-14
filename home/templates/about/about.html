@@ -4,11 +4,10 @@
 
 <link rel="stylesheet" type="text/css" href="{% static '/about/styles.css' %}">
 
-<div class="container marketing">
+<div class="container top-container marketing">
   <!-- START THE FEATURETTES -->
   {% for ab_i in ab_cont %}
-     <hr class="featurette-divider" id="about{{forloop.counter}}">
-     <div class="row featurette">
+     <div class="row featurette" id="about{{forloop.counter}}">
        {% if forloop.counter0|divisibleby:2 %}
           <div class="col-md-7">
        {% else %}
@@ -25,9 +24,10 @@
          <img class="featurette-image img-fluid mx-auto" src="{{ab_i.image.url}}" alt="Generic placeholder image">
        </div>
      </div>
+     {% if not forloop.last %}
+     <hr class="featurette-divider">
+     {% endif %}
   {% endfor %}
-  
-  <hr class="featurette-divider">
   <!-- /END THE FEATURETTES -->
 </div><!-- /.container -->
 {% endblock %}

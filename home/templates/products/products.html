@@ -3,12 +3,10 @@
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href="{% static '/products/styles.css' %}">
-<div class="container marketing">
+<div class="container top-container marketing">
   <!-- START THE FEATURETTES -->
   {% for prod_i in prod_cont %}
-     <hr class="featurette-divider" id="Prod{{forloop.counter}}">
-
-     <div class="row featurette">
+     <div class="row featurette" id="Prod{{forloop.counter}}">
        {% if forloop.counter0|divisibleby:2 %}
          <div class="col-md-7">
        {% else %}
@@ -40,13 +38,15 @@
             {% endif %}
          {% endfor %}
          </ul>
-         {% for butt_a in butt_cont %}
-            {% if forloop.counter == forloop.parentloop.counter %}
-               {% for butt_i in butt_a%}
-                 <a class="btn btn-lg btn-primary" href="{{butt_i.load_file.url}}" download role="button">{{butt_i.button_text}}</a>
-               {% endfor %}
-            {% endif %}
-         {% endfor %}
+            <p>
+            {% for butt_a in butt_cont %}
+                  {% if forloop.counter == forloop.parentloop.counter %}
+                  {% for butt_i in butt_a%}
+                    <a class="btn btn-lg btn-primary" href="{{butt_i.load_file.url}}" download role="button">{{butt_i.button_text}}</a>
+                  {% endfor %}
+               {% endif %}
+            {% endfor %}
+            </p>
        </div>
        {% if forloop.counter0|divisibleby:2 %}
          <div class="col-md-5">
@@ -56,9 +56,9 @@
          <img class="featurette-image img-fluid mx-auto" src="{{prod_i.image.url}}" alt="Generic placeholder image">
        </div>
      </div>
+     <hr class="featurette-divider">
   {% endfor %}
 
-  <hr class="featurette-divider">
   <!-- /END THE FEATURETTES -->
 </div>
 
@@ -79,7 +79,5 @@
       <img class="cert-image" src="{% static 'home/images/GMP.gif'%}" alt="Generic placeholder image" width="140" height="140">
     </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
-  <hr class="featurette-divider">
 </div><!-- /.container -->
-
 {% endblock %}
