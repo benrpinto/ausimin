@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from .models import ContactContent
+
 def contact(request):
+   myContact = ContactContent.objects.all()
    context = {
+              'cont_cont':myContact,
               'app_text':"Contact Us",
               'app_name':"Contact"
              } 
