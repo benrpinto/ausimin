@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'products.apps.ProductsConfig',
     'applications.apps.ApplicationsConfig',
+    'certify.apps.CertifyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

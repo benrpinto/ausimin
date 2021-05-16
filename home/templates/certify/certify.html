@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/certify/styles.css' %}">
+
+<div class="container top-container marketing">
+  <!-- START THE FEATURETTES -->
+  {% for cert_i in cert_cont %}
+     <div class="row featurette" id="certify{{forloop.counter}}">
+       <div class="col-lg-2"></div>
+       <div class="col-lg-4 col-9">
+         <p><b>{{cert_i.title_text}}</b>: {{cert_i.main_text}}</p>
+       </div>
+       <div class="col-lg-4 col-3">
+         {% if cert_i.image %}
+         <img class="featurette-image img-fluid mx-auto" src="{{cert_i.image.url}}" alt="Generic placeholder image">
+         {% endif %}
+       </div>
+     </div>
+  {% endfor %}
+  <!-- /END THE FEATURETTES -->
+</div><!-- /.container -->
+{% endblock %}
