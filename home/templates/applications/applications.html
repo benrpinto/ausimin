@@ -13,7 +13,7 @@
           <div class="col-md-7 order-md-2">
        {%endif%}
          <h2 class="featurette-heading">{{appl_i.title_text}}<br><span class="text-muted">{{appl_i.subtitle_text}}</span></h2>
-         <p class="lead">{{appl_i.main_text}}</p>
+         <p>{{appl_i.main_text}}</p>
            {%if appl_i.load_file %}
              <p><a class="btn btn-lg btn-primary" href="{{appl_i.load_file.url}}" download role="button">{{appl_i.button_text}}</a></p>
            {% endif %}
