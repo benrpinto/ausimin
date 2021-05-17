@@ -17,7 +17,9 @@
        {%else%}
          <div class="carousel-item">
        {%endif%}
+         {%if car_i.image %}
          <img class="{{forloop.counter0}}" src="{{car_i.image.url}}" alt="{{forloop.counter0}}">
+         {%endif%}
          <div class="container">
            <div class="carousel-caption text-left">
              <h1>{{car_i.title_text}}</h1>
@@ -44,13 +46,12 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
 <div class="container marketing">
-
-  <!-- Three columns of text below the carousel -->
   <div class="row">
-    <div class="col-lg-2"></div>
     {% for mark_i in mark_cont %}
-       <div class="col-lg-4">
+       <div class="col text-center">
+         {% if mark_i.image %}
          <img class="rounded-circle" src="{{mark_i.image.url}}" alt="Generic placeholder image" width="140" height="140">
+         {%endif%}
          <h2>{{mark_i.title_text}}</h2>
          <p>{{mark_i.main_text}}</p>
          <p><a class="btn btn-secondary" href="{{mark_i.link}}" role="button">{{mark_i.button_text}}</a></p>

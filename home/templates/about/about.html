@@ -21,7 +21,9 @@
        {% else %}
           <div class="col-md-5 order-md-1">
        {%endif%}
+         {%if ab_i.image %}
          <img class="featurette-image img-fluid mx-auto" src="{{ab_i.image.url}}" alt="Generic placeholder image">
+         {%endif%}
        </div>
      </div>
      {% if not forloop.last %}
