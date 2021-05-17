@@ -5,6 +5,15 @@
 <link rel="stylesheet" type="text/css" href="{% static '/certify/styles.css' %}">
 
 <div class="container top-container marketing">
+  <div class="pricing-header px-3 pb-md-4 mx-auto text-center">
+   {% if cert_head.0 %}
+    <h1 class="display-4">{{cert_head.0.title_text}}</h1>
+  </div>
+  <div>
+    <p class="text-center">{{cert_head.0.subtitle_text}}</p>
+    <p class="text-center">{{cert_head.0.main_text}}</p>
+    {% endif %}
+  </div>
   <!-- START THE FEATURETTES -->
   {% for cert_i in cert_cont %}
      <div class="row featurette" id="certify{{forloop.counter}}">

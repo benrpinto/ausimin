@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import ContactContent
+from home.admin import HeaderAdmin
 # Register your models here.
-class ContentAdmin(admin.ModelAdmin):
-   readonly_fields = ('id',)
 
-admin.site.register(ContactContent,ContentAdmin)
+admin.site.register(ContactContent,HeaderAdmin)

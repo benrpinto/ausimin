@@ -6,5 +6,8 @@ from .models import CarouselContent
 class ContentAdmin(admin.ModelAdmin):
    readonly_fields = ('id',)
 
+class HeaderAdmin(ContentAdmin):
+   exclude=('image',)
+
 admin.site.register(CarouselContent,ContentAdmin)
 admin.site.register(HomeContent,ContentAdmin)
