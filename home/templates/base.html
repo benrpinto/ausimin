@@ -26,6 +26,11 @@
   {
     scroll-padding-top:200px;
   }
+  .majority
+  {
+    min-height: 100vh;
+  }
+
   .top-container
   {
     padding-top:150px;
@@ -70,61 +75,63 @@
   </style>
 
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a href="/"><img class="navbar-logo small-hidden" src="{% static 'home/images/logo.png'%}" alt="Ausimin Logo" width=140 height=140></a>
-        <div class="col">
-          <div class="row" style="height:6rem;">
-              <a href="/"><img class="navbar-logo small-only" src="{% static 'home/images/logo.png'%}" alt="Ausimin Logo"></a>
-            <div class="col" width=auto>
-              <p class="header-text text-left">
-      	       <b>AUSIMIN PTY. LTD.</b>
-                <br>
-      	       Gypsum Products and Solutions
-      	     </p>
-            </div>
-          </div>
-          <div class="row">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item {%if app_name == "About"%}active{% endif %}">
-                  <a class="nav-link" href="/about">Company</a>
-                </li>
-                <li class="nav-item {%if app_name == "Applications"%}active{% endif %}">
-                  <a class="nav-link" href="/applications">Applications</a>
-                </li>
-                <li class="nav-item {%if app_name == "Products"%}active{% endif %}">
-                  <a class="nav-link" href="/products">Products</a>
-                </li>
-                <li class="nav-item {%if app_name == "Certify"%}active{% endif %}">
-                  <a class="nav-link" href="/certifications">Certifications</a>
-                </li>
-                <li class="nav-item {%if app_name == "Contact"%}active{% endif %}">
-                  <a class="nav-link" href="/contact">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main role="main">
-      <div id="content">
-        {% block content %}
-        {% endblock %}
-      </div>
+    <div class="container majority">
+       <header>
+         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+           <a href="/"><img class="navbar-logo small-hidden" src="{% static 'home/images/logo.png'%}" alt="Ausimin Logo" width=140 height=140></a>
+           <div class="col">
+             <div class="row" style="height:6rem;">
+                 <a href="/"><img class="navbar-logo small-only" src="{% static 'home/images/logo.png'%}" alt="Ausimin Logo"></a>
+               <div class="col" width=auto>
+                 <p class="header-text text-left">
+                   <b>AUSIMIN PTY. LTD.</b>
+                   <br>
+                   Gypsum Products and Solutions
+                 </p>
+               </div>
+             </div>
+             <div class="row">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarCollapse">
+                 <ul class="navbar-nav mr-auto">
+                   <li class="nav-item {%if app_name == "About"%}active{% endif %}">
+                     <a class="nav-link" href="/about">Company</a>
+                   </li>
+                   <li class="nav-item {%if app_name == "Applications"%}active{% endif %}">
+                     <a class="nav-link" href="/applications">Applications</a>
+                   </li>
+                   <li class="nav-item {%if app_name == "Products"%}active{% endif %}">
+                     <a class="nav-link" href="/products">Products</a>
+                   </li>
+                   <li class="nav-item {%if app_name == "Certify"%}active{% endif %}">
+                     <a class="nav-link" href="/certifications">Certifications</a>
+                   </li>
+                   <li class="nav-item {%if app_name == "Contact"%}active{% endif %}">
+                     <a class="nav-link" href="/contact">Contact Us</a>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </nav>
+       </header>
+       <main role="main">
+         <div id="content">
+           {% block content %}
+           {% endblock %}
+         </div>
+       </main>
+    </div>
+    <div class="container">
      <hr>
-        
       <!-- FOOTER -->
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p class="float-left">&copy; 2021 Ausimin Pty Ltd &middot; ABN: 48 146 942 529</p>
       </footer>
-    </main>
-
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster --> 
