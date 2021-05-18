@@ -4,7 +4,7 @@ from django.db import models
 
 class SiteContent(models.Model):
    title_text = models.CharField(blank=True, max_length=100)
-   main_text = models.CharField(blank=True, max_length=2000)
+   main_text = models.TextField(blank=True, max_length=2000)
    image = models.ImageField(blank=True, null=True)
    class Meta:
       abstract = True
@@ -13,7 +13,7 @@ class SiteContent(models.Model):
       return self.title_text + ' (' + str(self.id) + ')'
 
 class FeatureContent(SiteContent):
-   subtitle_text = models.CharField(blank=True, max_length=100)
+   subtitle_text = models.TextField(blank=True, max_length=100)
    class Meta:
       abstract = True
 

@@ -13,8 +13,8 @@
   </div>
   <div>
     {% if cont_cont.0 %}
-    <p class="contactText">{{cont_cont.0.subtitle_text}}</p>
-    <p class="contactText">{{cont_cont.0.main_text}}</p>
+    <p class="contactText">{{cont_cont.0.subtitle_text|linebreaksbr}}</p>
+    <p class="contactText">{{cont_cont.0.main_text|linebreaksbr}}</p>
     {% endif %}
   </div>
   <form class="form-contact" action="{% url 'contact:mail' %}" method="post">
