@@ -1,8 +1,8 @@
 # Ausimin
 Website development for a small business using Django and Bootstrap
 
-Recommended to use venv
-Packages (from pip list)
+Recommended to use venv  
+Packages (from pip list)  
 
 |Package       | Version |
 |------------- | ------- |
@@ -15,8 +15,8 @@ Packages (from pip list)
 |setuptools    | 44.0.0  |
 |sqlparse      | 0.4.1   |
 
-These can be installed through the following 2 commands
-pip install Django==3.0.8
-pip install Pillow
-
+These can be installed through the following 2 commands  
+pip install Django==3.0.8  
+pip install Pillow  
+  
 It is important to use Django 3.0.8 as the admin site is not completely functional in most recent Django version
